@@ -22,4 +22,3 @@ class Habit(models.Model):
     award = models.CharField(max_length=150, verbose_name='награда', **NULLABLE)
     time_to_complete = models.TimeField(default='00:03', verbose_name='время на выполнение')
     status = models.CharField(max_length=20, choices=STATUSES, default=STATUS_PUBLIC, verbose_name='признак публичности')
-

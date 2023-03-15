@@ -43,6 +43,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'drf_yasg',
+    'rest_framework_simplejwt',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -149,4 +151,11 @@ REST_FRAMEWORK = {
     ]
 }
 
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
 
+TELEGRAM_CHAT_ID = '407425912'
+TELEGRAM_BOT_TOKEN = '6142022768:AAGwHastjQOshingrvsVohE0EQkdUu0xrMs'
