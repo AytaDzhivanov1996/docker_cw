@@ -24,6 +24,7 @@ load_dotenv(dotenv_path=env_path)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -85,10 +86,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINE'),
-        'HOST': os.getenv('HOST'),
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': 'localhost',
+        'NAME': 'drf_cw',
+        'USER': 'postgres',
         'PASSWORD': os.getenv('PASSWORD'),
         'PORT': os.getenv('PORT')
     }
